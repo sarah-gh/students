@@ -1,6 +1,9 @@
 <template>
   <div>
     <b-table striped hover :items="students">
+      <template v-slot:cell(photo)="data">
+        <img :src="`${data.value}`">
+      </template>
       <template v-slot:cell(name)="data">
         <router-link :to="`/students/${data.item.number}`">
           {{ data.value }}
@@ -59,6 +62,11 @@ ul {
   margin: 0 auto;
   background-color: white;
   padding: 20px;
+}
+
+img{
+    width:100px;
+    height: 100px;
 }
 
 .table{
