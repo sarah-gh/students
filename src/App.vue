@@ -11,7 +11,7 @@
 body {
     color: #fff;
     background: #949c4e;
-    background: linear-gradient( 115deg, rgba(86, 216, 228, 1) 10%, rgba(159, 1, 234, 1) 90%);
+    background: linear-gradient( 90deg, rgba(86, 216, 228, 1) 10%, rgba(159, 1, 234, 1) 90%);
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
