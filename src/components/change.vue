@@ -105,15 +105,15 @@ export default {
                 this.students[this.id].phone = this.phone.value;
                 this.students[this.id].address = this.address.value;
                 this.$router.go(-1);
-                event.preventDefault();
+                //event.preventDefault();
             } else {
                 this.submitted = false;
-                event.preventDefault();
+                //event.preventDefault();
             }
 
         },
         Cancel(){
-            this.$router.go(-1);
+            this.$router.go(0);
         },
         isPhone: function(value) {
             return phoneNumberRegExp.test(value);
