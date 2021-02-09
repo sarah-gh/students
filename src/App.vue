@@ -8,6 +8,7 @@
 </template>
 
 <style lang="scss">
+@import url('https://fonts.googleapis.com/css2?family=Mali:wght@600&display=swap');
 body {
     color: #fff;
     background: #949c4e;
@@ -20,6 +21,7 @@ body {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-family: 'Mali', cursive;
   text-align: center;
   color: #2c3e50;
 }

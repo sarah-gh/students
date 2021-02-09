@@ -74,6 +74,7 @@ img{
   margin:0 auto;
   thead{
     background-color : #0000;
+        font-size:20px;
     tr{
       width: 100%;
       height:100px;
@@ -88,17 +89,25 @@ img{
         width: 80px;
       }
       th[aria-colindex="2"]{
-        width: 180px;
+        width: 200px;
       }
     }
   }
   tbody{
     background-color:rgb(255, 255, 255);
+    
     tr{
       background-color:rgb(255, 255, 255);
       td{
         vertical-align: inherit;
-        font-size: 20px;
+        font-size:20px;
+        a{
+          color: rgb(175, 26, 245);
+          &:hover{
+            color: rgb(103, 0, 151);
+            text-decoration: none;
+          }
+        }
       }
       td[aria-colindex="1"]{
         color:gray;
@@ -108,7 +117,4 @@ img{
   }
 }
 
-thead{
-  background-color : #0000
-}
 </style>

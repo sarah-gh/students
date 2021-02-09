@@ -104,7 +104,7 @@ export default {
                 this.students[this.id].family = this.lName.value;
                 this.students[this.id].phone = this.phone.value;
                 this.students[this.id].address = this.address.value;
-                this.$router.go(-1);
+                this.$emit('clicked')
                 //event.preventDefault();
             } else {
                 this.submitted = false;
@@ -113,7 +113,7 @@ export default {
 
         },
         Cancel(){
-            this.$router.go(0);
+            this.$emit('clicked')
         },
         isPhone: function(value) {
             return phoneNumberRegExp.test(value);
@@ -177,7 +177,7 @@ export default {
 }
 form{
     width:70%;
-    margin: 0 auto;
+    margin: 0 auto 30px auto;
     text-align: start;
     background-color: white;
     padding: 20px;
@@ -242,9 +242,10 @@ h4,
             box-shadow: 0 0 5px rgba(44, 151, 222, 0.2);
         }
         textarea {
-            min-height: 200px;
+            min-height: 100px;
             resize: vertical;
             overflow: auto;
+            margin-bottom: 20px;
         }
         .textarea_label {
             margin: 40px 0 0 0;

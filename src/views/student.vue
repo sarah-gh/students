@@ -1,11 +1,11 @@
 <template>
     <div>
         <div v-if="!check">
-            <Std :students="students" />
-            <button class="btn btn-info" @click="check = !check"> change </button>
+            <Std :students="students" @clicked="onClickChild" />
+            
         </div>
         <div v-if="check">
-            <Change :students="students" />
+            <Change :students="students" @clicked="onClickChild"/>
         </div>
         
     </div>
@@ -26,6 +26,12 @@ export default {
     components: {
         Std,
         Change
-    }
+    },
+    methods: {
+        onClickChild () {
+            this.check = !this.check;
+        }
+  }
 }
 </script>
+

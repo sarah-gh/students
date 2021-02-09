@@ -1,7 +1,7 @@
 export default [{
         photo: 'https://galileoenrichment.com/wp-content/uploads/2020/03/man.png',
-        name: 'ali',
-        family: 'aaa',
+        name: 'Ali',
+        family: 'Hasani',
         number: '97111111',
         address: 'asd fgh',
         year: '97',
@@ -12,8 +12,8 @@ export default [{
     },
     {
         photo: 'https://cdn2.iconfinder.com/data/icons/avatars-99/62/avatar-370-456322-256.png',
-        name: 'sina',
-        family: 'bbb',
+        name: 'Sina',
+        family: 'Parsa',
         number: '98222222',
         address: 'asd fgh',
         year: '98',
@@ -24,8 +24,8 @@ export default [{
     },
     {
         photo: 'https://cdn1.iconfinder.com/data/icons/avatars-1-5/136/87-512.png',
-        name: 'sara',
-        family: 'ccc',
+        name: 'Sara',
+        family: 'Ghotbzadeh',
         number: '98333333',
         address: 'asd fgh',
         year: '98',
@@ -36,8 +36,8 @@ export default [{
     },
     {
         photo: 'https://cdn1.iconfinder.com/data/icons/avatars-1-5/136/61-512.png',
-        name: 'bahar',
-        family: 'ddd',
+        name: 'Bahar',
+        family: 'Sadeqi',
         number: '99444444',
         address: 'asd fgh',
         year: '99',
