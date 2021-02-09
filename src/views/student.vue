@@ -2,11 +2,12 @@
     <div>
         <div v-if="!check">
             <Std :students="students" />
+            <button class="btn btn-info" @click="check = !check"> change </button>
         </div>
         <div v-if="check">
             <Change :students="students" />
         </div>
-        <button @click="check = !check"> change </button>
+        
     </div>
 </template>
 

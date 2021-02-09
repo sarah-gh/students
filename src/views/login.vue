@@ -34,24 +34,25 @@
 </template>
 
 <script>
-
+import student from '@/data/students'
 export default {
   name: 'Login',
   data () {
-    return {
-      fName: {
-        value: '',
-        validfName: true
-      },
-      errorFName: null,
-      pass: {
-        value: '',
-        validPass: true
-      },
-      errorPass: null,
-      submitted: false,
-      checkSub: false
-    }
+        return {
+            student,
+            fName: {
+                value: '',
+                validfName: true
+            },
+            errorFName: null,
+            pass: {
+                value: '',
+                validPass: true
+            },
+            errorPass: null,
+            submitted: false,
+            checkSub: false
+        }
   },
 
   methods: {
@@ -61,7 +62,8 @@ export default {
         this.fName.value.length === 8) {
         this.submitted = true
         event.preventDefault()
-        this.$router.push('Students')
+        this.change()
+        this.$router.push('students')
       } else {
         this.submitted = false
         event.preventDefault()
@@ -72,7 +74,13 @@ export default {
         this.formCheck()
       }
     },
-
+    change() {
+        for(let i = 0 ; i < this.student.length ; i++){
+            if(this.fName.value == this.student[i].number){
+                this.student[i].change = true;
+            }
+        }
+    },
     functionErrorFName () {
       if (this.fName.value.length === 8) {
         this.fName.validfName = true

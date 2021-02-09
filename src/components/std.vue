@@ -2,34 +2,41 @@
     <div>
         <div v-for="student in students" :key="student">
             <div v-if="$route.params.id == student.number">
-                <ul class="student">
-                    <li>
-                        {{ student.name }}
-                    </li>
-                    <li>
-                        {{ student.family }}
-                    </li>
-                    <li>
-                        {{ student.number }}
-                    </li>
-                    <li>
-                        {{ student.address }}
-                    </li>
-                    <li>
-                        {{ student.year }}
-                    </li>
-                    <li>
-                        {{ student.phone }}
-                    </li>
-                     <li>
-                        {{ student.gpa }}
-                    </li>
-                    
-                </ul>
-                
+                <div class="student" >
+                    <header class="position-relative">
+                        <a class="" @click="back"> <b-icon icon="arrow-left-circle-fill"></b-icon></a>
+                        <div class="std_img"><img  :src="`${student.photo}`" ></div>
+                        <h2>
+                            {{ student.name }} {{ student.family }}
+                        </h2>
+                    </header>
+                    <div class=" details">
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                            <b-icon icon="person-circle"></b-icon>
+                            {{ student.number }}
+                            </li>
+                            <li class="list-group-item">
+                            <b-icon icon="geo-alt-fill"></b-icon>
+                                {{ student.address }}
+                            </li>
+                            <li class="list-group-item">
+                            <b-icon icon="calendar3"></b-icon>
+                                {{ student.year }}
+                            </li>
+                            <li class="list-group-item">
+                            <b-icon icon="telephone-fill"></b-icon>
+                                {{ student.phone }}
+                            </li>
+                            <li class="list-group-item">
+                            <b-icon icon="star-fill"></b-icon>
+                                {{ student.gpa }}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
-        <button @click="back">back to list</button>
     </div>
 </template>
 
@@ -50,10 +57,60 @@ export default {
 
 <style lang="scss" scoped>
 .student{
-    background-color: white;
-    width: 70%;
-    margin: 0 auto;
-    padding:20px;
+    background-color: rgb(233, 225, 236);
+    width: 50%;
+    margin: 0 auto 20px auto;
+    padding:10px;
+    border-radius: 20px;
+    header{
+        background-color:  rgba(159, 1, 234, 1);
+        width: 100%;
+        height: 300px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
+        position: relative;
+        .std_img{
+            border-radius:50%;
+            background-color: white;
+            width:fit-content;
+            height:fit-content;
+            padding: 10px;
+        }
+        img{
+            border-right: 50%;
+            width: 130px;
+            height: 130px;
+        }
+        h2{
+            margin-bottom: 0px;
+        }
+        a{
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            font-size: 30px;
+            color:white;
+        }
+    }
+    .details{
+        width: 90%;
+        height:300px;
+        background-color: white;
+        margin: -50px auto 10px auto;
+        border-radius: 20px;
+        z-index:100;
+        position: sticky;
+        .list-group{
+            text-align: start;
+            svg{
+                width: 20px;
+                margin-right:10px;
+            }
+        }
+    }
 }
 
 h4,
