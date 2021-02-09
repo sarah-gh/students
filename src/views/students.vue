@@ -1,6 +1,9 @@
 <template>
   <div class="aaa">
     <b-table striped hover :items="students" :fields="fields">
+      <template #cell(index)="data">
+        {{ data.index + 1 }}
+      </template>
       <template v-slot:cell(photo)="data">
         <img :src="`${data.value}`">
       </template>
@@ -19,6 +22,7 @@ import students from "@/data/students"
     data() {
       return {
         fields: [
+          'index',
           {
             key: 'photo',
             sortable: false
@@ -80,6 +84,12 @@ img{
         border-top: 0px solid #dee2e6;
         border-left: 1px solid #dee2e6;
       }
+      th[aria-colindex="1"]{
+        width: 80px;
+      }
+      th[aria-colindex="2"]{
+        width: 180px;
+      }
     }
   }
   tbody{
@@ -88,6 +98,11 @@ img{
       background-color:rgb(255, 255, 255);
       td{
         vertical-align: inherit;
+        font-size: 20px;
+      }
+      td[aria-colindex="1"]{
+        color:gray;
+        border-right: 1px solid #dee2e6;
       }
     }
   }
