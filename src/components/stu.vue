@@ -1,60 +1,86 @@
 <template>
-    <div>
-        <div v-for="student in students" :key="student">
-            <div v-if="$route.params.id == student.number">
-                <div class="student" >
-                    <header class="position-relative">
-                        <a class="" @click="back"> <b-icon icon="arrow-left-circle-fill"></b-icon></a>
-                        <div class="std_img"><img  :src="`${student.photo}`" ></div>
-                        <h2>
-                            {{ student.name }} {{ student.family }}
-                        </h2>
-                    </header>
-                    <div class=" details">
-                        <ul class="list-group">
-                            <li class="list-group-item">
-                            <b-icon icon="person-circle"></b-icon>
-                            <span>number : </span>{{ student.number }}
-                            </li>
-                            <li class="list-group-item">
-                            <b-icon icon="geo-alt-fill"></b-icon>
-                            <span>Address :  </span>{{ student.address }}
-                            </li>
-                            <li class="list-group-item">
-                            <b-icon icon="calendar3"></b-icon>
-                            <span>Entering year : </span>  {{ student.year }}
-                            </li>
-                            <li class="list-group-item">
-                            <b-icon icon="telephone-fill"></b-icon>
-                            <span>Phone number :  </span>  {{ student.phone }}
-                            </li>
-                            <li class="list-group-item">
-                            <b-icon icon="star-fill"></b-icon>
-                             <span>GPA : </span>   {{ student.gpa }}
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <button class="btn btn-info button" @click="onClickButton"> change </button>
+    <div>   
+        <div class="student" >
+            <header class="position-relative">
+                <a class="" @click="back"> <b-icon icon="arrow-left-circle-fill"></b-icon></a>
+                <div class="std_img"><img  :src="`${student.photo}`" ></div>
+                <h2>
+                    {{ student.name }} {{ student.family }}
+                </h2>
+            </header>
+            <div class=" details">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                    <b-icon icon="person-circle"></b-icon>
+                    <span>number : </span>{{ student.number }}
+                    </li>
+                    <li class="list-group-item">
+                    <b-icon icon="geo-alt-fill"></b-icon>
+                    <span>Address :  </span>{{ student.address }}
+                    </li>
+                    <li class="list-group-item">
+                    <b-icon icon="calendar3"></b-icon>
+                    <span>Entering year : </span>  {{ student.year }}
+                    </li>
+                    <li class="list-group-item">
+                    <b-icon icon="telephone-fill"></b-icon>
+                    <span>Phone number :  </span>  {{ student.phone }}
+                    </li>
+                    <li class="list-group-item">
+                    <b-icon icon="star-fill"></b-icon>
+                        <span>GPA : </span>   {{ student.gpa }}
+                    </li>
+                </ul>
             </div>
         </div>
+        <button class="btn btn-info button" v-if="student.change == 'true'" @click="onClickButton"> change </button>
     </div>
+        
 </template>
 
 <script>
 export default {
-    name: 'Std',
+    name: 'Stu',
+    // data () {
+    //     return {
+    //         mystudent: {
+    //             photo: '',
+    //             name: '',
+    //             family: '',
+    //             number: '',
+    //             address: '',
+    //             year: '',
+    //             phone: '',
+    //             gpa: '',
+    //             maxlength: 100,
+    //             change: false
+    //         },
+    //         check: false,
+    //     }
+    // },
     props:{
-        students: Array
+        student: Object
     },
     methods: {
         back() {
-            this.$router.go(-1)
+            this.$emit('back');
+            this.$router.go(-1);
         },
         onClickButton (event) {
             this.$emit('clicked')
         }
-    }
+    },
+    // mounted() {
+    //     this.mystudent.name = this.student.name;
+    //     this.mystudent.family = this.student.family;
+    //     this.mystudent.photo = this.student.photo;
+    //     this.mystudent.number = this.student.number;
+    //     this.mystudent.gpa = this.student.gpa;
+    //     this.mystudent.phone = this.student.phone;
+    //     this.mystudent.year = this.student.year;
+    //     this.mystudent.address = this.student.address;
+    //     this.mystudent.change = this.student.change;
+    // }
 }
 </script>
 

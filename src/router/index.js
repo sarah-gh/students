@@ -9,6 +9,7 @@ Vue.use(VueRouter)
 const routes = [{
     path: '/',
     name: 'Home',
+    redirect: "/login",
     component: Home
 }, {
     path: '/students',
@@ -21,7 +22,8 @@ const routes = [{
 }, {
     path: '/students/:id',
     name: 'Student',
-    component: Student
+    component: Student,
+    props: true
 }]
 
 const router = new VueRouter({

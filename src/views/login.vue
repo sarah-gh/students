@@ -1,8 +1,6 @@
 <template>
   <div id="app3">
-
         <form class="vue-form" @submit.prevent="submit">
-
             <fieldset>
                 <legend>Login</legend>
                 <div>
@@ -25,11 +23,6 @@
                 </div>
             </fieldset>
         </form>
-
-        <!-- <div class="debug">
-            <pre><code>{{ $data }}</code></pre>
-        </div> -->
-
     </div>
 </template>
 
@@ -75,9 +68,19 @@ export default {
       }
     },
     change() {
-        for(let i = 0 ; i < this.student.length ; i++){
-            if(this.fName.value == this.student[i].number){
+        if(this.fName.value == "1111111"){
+            for(let i = 0 ; i < this.student.length ; i++){
                 this.student[i].change = true;
+            }
+        }
+        else{
+            for(let i = 0 ; i < this.student.length ; i++){
+                if(this.fName.value == this.student[i].number){
+                    this.student[i].change = true;
+                }
+                else{
+                    this.student[i].change = false;
+                }
             }
         }
     },

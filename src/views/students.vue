@@ -1,23 +1,26 @@
 <template>
-  <div class="aaa">
-    <b-table striped hover :items="students" :fields="fields">
-      <template #cell(index)="data">
-        {{ data.index + 1 }}
-      </template>
-      <template v-slot:cell(photo)="data">
-        <img :src="`${data.value}`">
-      </template>
-      <template v-slot:cell(name)="data">
-        <router-link :to="`/students/${data.item.number}`">
-          {{ data.value }}
-        </router-link>
-      </template>
-    </b-table>
+  <div>
+    <table>
+      <thead>
+        <tr>
+          <th>index</th>
+          <th>photo</th>
+          <th>Firstname</th>
+          <th>Lastname</th>
+          <th>number</th>
+          <th>GPA</th>
+        </tr>
+      </thead>
+      <tbody>
+          <myStudent v-for="(student, index) in students" :key='index' :student="student" :index="index"/>
+      </tbody>
+    </table>
   </div>
 </template>
 
 <script>
 import students from "@/data/students"
+import myStudent from "../components/myStudent.vue"
   export default {
     data() {
       return {
@@ -47,31 +50,29 @@ import students from "@/data/students"
         ],
         students
       }
-    }
+    },
+    components: {
+      myStudent
+    },
+    // methods: {
+    //   routeQuery(item) {
+    //     this.$router.push({ path: `/students/${item.number}`, query: item })
+    //   }
+    // }
   }
 </script>
 
 
 <style lang="scss">
-.aaa{
-  height: 100%;
-}
-ul {
-  width: 80%;
-  margin: 0 auto;
-  background-color: white;
-  padding: 20px;
-}
-
 img{
     width:100px;
     height: 100px;
 }
 
-.table{
+table{
   background-color:rgba(255, 255, 255, 0);
   width: 80%;
-  margin:0 auto;
+  margin:100px auto;
   thead{
     background-color : #0000;
         font-size:20px;
@@ -101,14 +102,19 @@ img{
       td{
         vertical-align: inherit;
         font-size:20px;
-        a{
+        border-top: 1px solid #dee2e6;
+      }
+      .photo{
+        padding: 10px;
+      }
+      .link{
           color: rgb(175, 26, 245);
+          cursor: pointer;
           &:hover{
             color: rgb(103, 0, 151);
             text-decoration: none;
           }
         }
-      }
       td[aria-colindex="1"]{
         color:gray;
         border-right: 1px solid #dee2e6;

@@ -1,7 +1,5 @@
 <template>
     <div>
-    <div v-for="student in students" :key="student">
-            <div v-if="$route.params.id == student.number">
                 <form class="vue-form" @submit.prevent="submit">
                     <fieldset>
                         <legend>Change</legend>
@@ -9,14 +7,14 @@
                         <div>
                             <div>
                                 <label class="label" for="fName">name : </label>
-                                <input type="text" name="name" minlength="8" id="fname" required="" v-model="fName.value" :class="{ error: !fName.validfName }">
+                                <input type="text" name="name" minlength="8" id="fname" required="" v-model="fName.value" disabled :class="{ error: !fName.validfName }">
                                 <div class="error-message">
                                     <p v-if="errorFName">Please enter a username of 8 numbers.</p>
                                 </div>
                             </div>
                             <div>
                                 <label class="label" for="lName">family : </label>
-                                <input type="text" name="name" minlength="2" id="lname" required="" v-model="lName.value" >
+                                <input type="text" name="name" minlength="2" id="lname" required="" v-model="lName.value" disabled >
                                 <div class="error-message">
                                     <p v-if="errorLName">Please enter a last name of at least 3 characters.</p>
                                 </div>
@@ -44,8 +42,7 @@
                     </fieldset>
                 </form>
             </div>
-        </div>
-    </div>
+        
 </template>
 
 
@@ -80,18 +77,13 @@ export default {
         }
     },
     props:{
-        students: Array
+        student: Object
     },
     mounted (){
-        for(let i = 0 ; i < this.students.length ; i++){
-            if(this.$route.params.id == this.students[i].number){
-                this.id = i;
-                this.lName.value = this.students[i].family;
-                this.fName.value = this.students[i].name;
-                this.phone.value = this.students[i].phone;
-                this.address.value = this.students[i].address;
-            }
-        }
+        this.lName.value = this.student.family;
+        this.fName.value = this.student.name;
+        this.phone.value = this.student.phone;
+        this.address.value = this.student.address;
     },
     methods: {
         submit: function(event) {
@@ -100,10 +92,10 @@ export default {
                 this.fName.value.length >= 3 &&
                 this.lName.value.length >= 3) {
                 this.submitted = true;
-                this.students[this.id].name = this.fName.value;
-                this.students[this.id].family = this.lName.value;
-                this.students[this.id].phone = this.phone.value;
-                this.students[this.id].address = this.address.value;
+                this.student.name = this.fName.value;
+                this.student.family = this.lName.value;
+                this.student.phone = this.phone.value;
+                this.student.address = this.address.value;
                 this.$emit('clicked')
                 //event.preventDefault();
             } else {
