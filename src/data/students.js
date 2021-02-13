@@ -32,7 +32,7 @@ export default [{
         phone: '09333333333',
         gpa: '17',
         maxlength: 100,
-        change: true
+        change: false
     },
     {
         photo: 'https://cdn1.iconfinder.com/data/icons/avatars-1-5/136/61-512.png',
