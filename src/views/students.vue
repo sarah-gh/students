@@ -20,6 +20,7 @@
 
 <script>
 import students from "@/data/students"
+import { EventBus } from '../main'
 import myStudent from "../components/myStudent.vue"
   export default {
     data() {
@@ -54,6 +55,33 @@ import myStudent from "../components/myStudent.vue"
     components: {
       myStudent
     },
+    beforeMount() {
+      EventBus.$on('DATA_PUBLISHED', (payload) => {
+            for(let i = 0 ; i < this.students.length; i++){
+                if(this.students[i].number == payload.number){
+                    this.students[i].address = payload.address;
+                    this.students[i].phone = payload.phone;
+                }
+            }
+            
+        })
+    },
+    // mounted () {
+    //   EventBus.$on('DATA_PUBLISHED', (payload) => {
+    //         //console.log(payload);
+    //         console.log("payload")
+    //         // this.student.address = payload.address;
+    //         // this.student.phone = payload.phone;
+    //         for(let i = 0 ; i < this.students.length; i++){
+    //             console.log(i+1);
+    //             if(this.students[i].number == payload.number){
+    //                 this.students[i].address = payload.address;
+    //                 this.students[i].phone = payload.phone;
+    //             }
+    //         }
+            
+    //     })
+    // }
     // methods: {
     //   routeQuery(item) {
     //     this.$router.push({ path: `/students/${item.number}`, query: item })

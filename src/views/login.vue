@@ -68,7 +68,7 @@ export default {
     },
     change() {
         let num = this.fName.value
-        this.student.map(function (student,){
+        this.student.map(function (student){
             if(num == student.number){
                     student.change = true;
                 }

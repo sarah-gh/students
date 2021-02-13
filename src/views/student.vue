@@ -38,7 +38,7 @@ export default {
         Stu,
         Change
     },
-    mounted() {
+    beforeMount (){
         this.student.name = this.$route.query.name;
         this.student.photo = this.$route.query.photo;
         this.student.family = this.$route.query.family;
@@ -49,13 +49,17 @@ export default {
         this.student.phone = this.$route.query.phone;
         this.student.change = (/true/i).test(this.$route.query.change);
     },
+    mounted() {
+        
+    },
     methods: {
         onClickChild1 () {
             this.check = !this.check;
         },
         onClickChild2 () {
             this.check = !this.check;
-            EventBus.$emit('DATA_PUBLISHED', this.student) 
+            //let num = this.student.number
+            //EventBus.$emit('DATA_PUBLISHED', this.student) 
         },
         back() {
             EventBus.$emit('DATA_PUBLISHED', this.student) 

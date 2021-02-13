@@ -3,37 +3,37 @@
         <div class="student" >
             <header class="position-relative">
                 <a class="" @click="back"> <b-icon icon="arrow-left-circle-fill"></b-icon></a>
-                <div class="std_img"><img  :src="`${student.photo}`" ></div>
+                <div class="std_img"><img  :src="`${stu.photo}`" ></div>
                 <h2>
-                    {{ student.name }} {{ student.family }}
+                    {{ stu.name }} {{ stu.family }}
                 </h2>
             </header>
             <div class=" details">
                 <ul class="list-group">
                     <li class="list-group-item">
                     <b-icon icon="person-circle"></b-icon>
-                    <span>number : </span>{{ student.number }}
+                    <span>number : </span>{{ stu.number }}
                     </li>
                     <li class="list-group-item">
                     <b-icon icon="geo-alt-fill"></b-icon>
-                    <span>Address :  </span>{{ student.address }}
+                    <span>Address :  </span>{{ stu.address }}
                     </li>
                     <li class="list-group-item">
                     <b-icon icon="calendar3"></b-icon>
-                    <span>Entering year : </span>  {{ student.year }}
+                    <span>Entering year : </span>  {{ stu.year }}
                     </li>
                     <li class="list-group-item">
                     <b-icon icon="telephone-fill"></b-icon>
-                    <span>Phone number :  </span>  {{ student.phone }}
+                    <span>Phone number :  </span>  {{ stu.phone }}
                     </li>
                     <li class="list-group-item">
                     <b-icon icon="star-fill"></b-icon>
-                        <span>GPA : </span>   {{ student.gpa }}
+                        <span>GPA : </span>   {{ stu.gpa }}
                     </li>
                 </ul>
             </div>
         </div>
-        <button class="btn btn-info button" v-if="student.change == true" @click="onClickButton"> change </button>
+        <button class="btn btn-info button" v-if="stu.change == true" @click="onClickButton"> change </button>
     </div>
         
 </template>
@@ -41,23 +41,23 @@
 <script>
 export default {
     name: 'Stu',
-    //  data () {
-    //     return {
-    //         stu: {
-    //             photo: '',
-    //             name: '',
-    //             family: '',
-    //             number: '',
-    //             address: '',
-    //             year: '',
-    //             phone: '',
-    //             gpa: '',
-    //             maxlength: 100,
-    //             change: false
-    //         },
-    //         check: false,
-    //     }
-    // },
+    data () {
+        return {
+            stu: {
+                photo: '',
+                name: '',
+                family: '',
+                number: '',
+                address: '',
+                year: '',
+                phone: '',
+                gpa: '',
+                maxlength: 100,
+                change: false
+            },
+            check: false,
+        }
+    },
     props:{
         student: Object
     },
@@ -70,30 +70,19 @@ export default {
             this.$emit('clicked')
         }
     },
-    // beforeMount() {
-    //     this.stu.name = this.student.name;
-    //     this.stu.family = this.student.family;
-    //     this.stu.photo = this.student.photo;
-    //     this.stu.number = this.student.number;
-    //     this.stu.gpa = this.student.gpa;
-    //     this.stu.phone = this.student.phone;
-    //     this.stu.year = this.student.year;
-    //     this.stu.address = this.student.address;
-    //     this.stu.change = this.student.change;
-    //     console.log(this.student);
-    //     console.log(this.stu)
-    // },
-    // mounted() {
-    //     this.stu.name = this.student.name;
-    //     this.stu.family = this.student.family;
-    //     this.stu.photo = this.student.photo;
-    //     this.stu.number = this.student.number;
-    //     this.stu.gpa = this.student.gpa;
-    //     this.stu.phone = this.student.phone;
-    //     this.stu.year = this.student.year;
-    //     this.stu.address = this.student.address;
-    //     this.stu.change = this.student.change;
-    // }
+    mounted() {
+        this.stu.name = this.student.name;
+        this.stu.family = this.student.family;
+        this.stu.photo = this.student.photo;
+        this.stu.number = this.student.number;
+        this.stu.gpa = this.student.gpa;
+        this.stu.phone = this.student.phone;
+        this.stu.year = this.student.year;
+        this.stu.address = this.student.address;
+        this.stu.change = this.student.change;
+        // console.log(this.student);
+        // console.log(this.stu)
+    }
 }
 </script>
 

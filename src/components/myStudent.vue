@@ -10,7 +10,6 @@
 </template>
 
 <script>
-import { EventBus } from '../main'
 export default {
     name: 'myStudent',
     data() {
@@ -42,10 +41,7 @@ export default {
         this.mystudent.year = this.student.year;
         this.mystudent.address = this.student.address;
         this.mystudent.change = this.student.change;
-        EventBus.$on('DATA_PUBLISHED', (payload) => {
-            this.student.address = payload.address;
-            this.student.phone = payload.phone;
-        })
+        
     },
     methods: {
       routeQuery(item) {

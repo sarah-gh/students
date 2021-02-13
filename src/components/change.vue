@@ -96,6 +96,7 @@ export default {
                 this.student.family = this.lName.value;
                 this.student.phone = this.phone.value;
                 this.student.address = this.address.value;
+                console.log(this.student);
                 this.$emit('clicked')
                 //event.preventDefault();
             } else {
