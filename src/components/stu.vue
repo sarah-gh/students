@@ -33,7 +33,7 @@
                 </ul>
             </div>
         </div>
-        <button class="btn btn-info button" v-if="student.change == 'true'" @click="onClickButton"> change </button>
+        <button class="btn btn-info button" v-if="student.change == true" @click="onClickButton"> change </button>
     </div>
         
 </template>
@@ -41,9 +41,9 @@
 <script>
 export default {
     name: 'Stu',
-    // data () {
+    //  data () {
     //     return {
-    //         mystudent: {
+    //         stu: {
     //             photo: '',
     //             name: '',
     //             family: '',
@@ -70,16 +70,29 @@ export default {
             this.$emit('clicked')
         }
     },
+    // beforeMount() {
+    //     this.stu.name = this.student.name;
+    //     this.stu.family = this.student.family;
+    //     this.stu.photo = this.student.photo;
+    //     this.stu.number = this.student.number;
+    //     this.stu.gpa = this.student.gpa;
+    //     this.stu.phone = this.student.phone;
+    //     this.stu.year = this.student.year;
+    //     this.stu.address = this.student.address;
+    //     this.stu.change = this.student.change;
+    //     console.log(this.student);
+    //     console.log(this.stu)
+    // },
     // mounted() {
-    //     this.mystudent.name = this.student.name;
-    //     this.mystudent.family = this.student.family;
-    //     this.mystudent.photo = this.student.photo;
-    //     this.mystudent.number = this.student.number;
-    //     this.mystudent.gpa = this.student.gpa;
-    //     this.mystudent.phone = this.student.phone;
-    //     this.mystudent.year = this.student.year;
-    //     this.mystudent.address = this.student.address;
-    //     this.mystudent.change = this.student.change;
+    //     this.stu.name = this.student.name;
+    //     this.stu.family = this.student.family;
+    //     this.stu.photo = this.student.photo;
+    //     this.stu.number = this.student.number;
+    //     this.stu.gpa = this.student.gpa;
+    //     this.stu.phone = this.student.phone;
+    //     this.stu.year = this.student.year;
+    //     this.stu.address = this.student.address;
+    //     this.stu.change = this.student.change;
     // }
 }
 </script>

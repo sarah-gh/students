@@ -47,7 +47,7 @@ export default {
         this.student.year = this.$route.query.year;
         this.student.gpa = this.$route.query.gpa;
         this.student.phone = this.$route.query.phone;
-        this.student.change = this.$route.query.change;
+        this.student.change = (/true/i).test(this.$route.query.change);
     },
     methods: {
         onClickChild1 () {
@@ -58,7 +58,6 @@ export default {
             EventBus.$emit('DATA_PUBLISHED', this.student) 
         },
         back() {
-            console.log("1");
             EventBus.$emit('DATA_PUBLISHED', this.student) 
         }
     },

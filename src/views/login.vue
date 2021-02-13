@@ -47,7 +47,6 @@ export default {
             checkSub: false
         }
   },
-
   methods: {
     submit (event) {
       if (
@@ -68,21 +67,16 @@ export default {
       }
     },
     change() {
-        if(this.fName.value == "1111111"){
-            for(let i = 0 ; i < this.student.length ; i++){
+        
+        for(let i = 0 ; i < this.student.length ; i++){
+            if(this.fName.value == this.student[i].number){
                 this.student[i].change = true;
             }
-        }
-        else{
-            for(let i = 0 ; i < this.student.length ; i++){
-                if(this.fName.value == this.student[i].number){
-                    this.student[i].change = true;
-                }
-                else{
-                    this.student[i].change = false;
-                }
+            else{
+                this.student[i].change = false;
             }
         }
+        
     },
     functionErrorFName () {
       if (this.fName.value.length === 8) {

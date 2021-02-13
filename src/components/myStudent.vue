@@ -49,7 +49,6 @@ export default {
     },
     methods: {
       routeQuery(item) {
-        console.log(item.number);
         this.$router.push({ path: `/students/${item.number}`, query:{
              name:item.name, 
              family:item.family, 
