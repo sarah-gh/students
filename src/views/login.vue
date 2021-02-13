@@ -67,15 +67,24 @@ export default {
       }
     },
     change() {
-        
-        for(let i = 0 ; i < this.student.length ; i++){
-            if(this.fName.value == this.student[i].number){
-                this.student[i].change = true;
-            }
+        let num = this.fName.value
+        this.student.map(function (student,){
+            if(num == student.number){
+                    student.change = true;
+                }
             else{
-                this.student[i].change = false;
-            }
-        }
+                    student.change = false;
+                }
+            return 0;
+        })
+        // for(let i = 0 ; i < this.student.length ; i++){
+        //     if(this.fName.value == this.student[i].number){
+        //         this.student[i].change = true;
+        //     }
+        //     else{
+        //         this.student[i].change = false;
+        //     }
+        // }
         
     },
     functionErrorFName () {
