@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="student">
         <div v-if="!check">
             <Stu :student="student" @clicked="onClickChild1" @back="back" />
             
@@ -68,3 +68,8 @@ export default {
 }
 </script>
 
+<style scoped>
+.student{
+    margin-top:50px
+}
+</style>

@@ -6,7 +6,7 @@ export default [{
         address: 'asd fgh',
         year: '97',
         phone: '09111111111',
-        gpa: '17',
+        gpa: '18',
         maxlength: 100,
         change: false
     },
@@ -30,7 +30,7 @@ export default [{
         address: 'asd fgh',
         year: '98',
         phone: '09333333333',
-        gpa: '17',
+        gpa: '16',
         maxlength: 100,
         change: false
     },
@@ -42,7 +42,7 @@ export default [{
         address: 'asd fgh',
         year: '99',
         phone: '09444444444',
-        gpa: '17',
+        gpa: '19',
         maxlength: 100,
         change: false
     }

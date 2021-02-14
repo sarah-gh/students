@@ -123,7 +123,6 @@ table{
     }
   }
   tbody{
-    background-color:rgb(255, 255, 255);
     
     tr{
       background-color:rgb(255, 255, 255);
@@ -138,9 +137,11 @@ table{
       .link{
           color: rgb(175, 26, 245);
           cursor: pointer;
+          transition: 0.3s ease all;
           &:hover{
             color: rgb(103, 0, 151);
             text-decoration: none;
+            font-size:22px;
           }
         }
       td[aria-colindex="1"]{

@@ -126,6 +126,7 @@ export default {
             left: 15px;
             font-size: 30px;
             color:white;
+            transition: 0.5s ease all;
         }
     }
     .details{
@@ -147,12 +148,15 @@ export default {
             width:98%;
             margin: 0 auto;
             font-weight: bold;
+            border-radius: 20px;
             .list-group-item{
-                padding: 0.8rem 1.25rem;
+                padding: 1rem 1.25rem;
             }
             svg{
                 width: 20px;
                 margin-right:20px;
+                font-size: 20px;
+                color: darkslateblue;
             }
             span{
                 color:gray;
