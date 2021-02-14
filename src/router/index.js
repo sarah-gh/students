@@ -1,9 +1,9 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
-import Students from '../views/students.vue'
-import Student from '../views/student.vue'
-import Login from '../views/login.vue'
+//import Students from '../views/students.vue'
+//import Student from '../views/student.vue'
+//import Login from '../views/login.vue'
 Vue.use(VueRouter)
 
 const routes = [{
@@ -14,15 +14,18 @@ const routes = [{
 }, {
     path: '/students',
     name: 'Students',
-    component: Students
+    component: () =>
+        import ( /* webpackChunkName: "students" */ '../views/students.vue'),
 }, {
     path: '/login',
     name: 'Login',
-    component: Login
+    component: () =>
+        import ( /* webpackChunkName: "login" */ '../views/login.vue'),
 }, {
     path: '/students/:id',
     name: 'Student',
-    component: Student,
+    component: () =>
+        import ( /* webpackChunkName: "student" */ '../views/student.vue'),
     props: true
 }]
 
