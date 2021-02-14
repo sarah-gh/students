@@ -13,7 +13,7 @@
 
                 <div>
                     <label class="label" for="pass">Password : </label>
-                    <input type="password" name="name" minlength="6" id="pass" required="" v-model="pass.value" :class="{ error: !pass.validPass }">
+                    <input type="password" name="name" minlength="4" id="pass" required="" v-model="pass.value" :class="{ error: !pass.validPass }">
                     <div class="error-message">
                         <p v-if="errorPass">please enter minimum 4 characters.</p>
                     </div>

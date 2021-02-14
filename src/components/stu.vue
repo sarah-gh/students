@@ -35,10 +35,10 @@
         </div>
         <button class="btn btn-info button" v-if="stu.change == true" @click="onClickButton"> change </button>
     </div>
-        
 </template>
 
 <script>
+
 export default {
     name: 'Stu',
     data () {

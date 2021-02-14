@@ -7,7 +7,7 @@
                         <div>
                             <div>
                                 <label class="label" for="fName">name : </label>
-                                <input type="text" name="name" minlength="8" id="fname" required="" v-model="fName.value" disabled :class="{ error: !fName.validfName }">
+                                <input type="text" name="name" minlength="3" id="fname" required="" v-model="fName.value" disabled :class="{ error: !fName.validfName }">
                                 <div class="error-message">
                                     <p v-if="errorFName">Please enter a username of 8 numbers.</p>
                                 </div>
@@ -183,11 +183,12 @@ form{
 h4,
         .label {
             color: #94aab0;
+            margin-top:30px;
             margin-bottom: 10px;
             vertical-align: inherit;
         }
         input{
-            margin: 20px auto;
+            margin: 20px auto 10px auto;
         }
         .label {
             display: block;
@@ -198,6 +199,7 @@ h4,
         label {
             color: #2b3e51;
         }
+        label {margin-top:10px;}
         input[type="text"],
         input[type="email"],
         input[type="password"],
@@ -222,6 +224,11 @@ h4,
             background-color: #ffffff;
             border-radius: 0.25em;
             box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.08);
+        }
+        input[type="text"]{
+            color:rgb(109, 109, 109);
+            background-color: #e9dada;
+            cursor: no-drop;
         }
         input[type="text"]:focus,
         input[type="email"]:focus,
@@ -258,5 +265,9 @@ h4,
         button {
             margin-right:10px;
             margin-bottom: 30px;
+        }
+        .error-message{
+            color:rgb(167, 0, 0);
+            font-size:15px;
         }
 </style>
