@@ -63,14 +63,14 @@ export default {
     },
     methods: {
         back() {
-            this.$emit('back');
+            //this.$emit('back');
             this.$router.go(-1);
         },
         onClickButton (event) {
             this.$emit('clicked')
         }
     },
-    mounted() {
+    created() {
         this.stu.name = this.student.name;
         this.stu.family = this.student.family;
         this.stu.photo = this.student.photo;

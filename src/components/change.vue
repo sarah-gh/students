@@ -79,7 +79,7 @@ export default {
     props:{
         student: Object
     },
-    mounted (){
+    created (){
         this.lName.value = this.student.family;
         this.fName.value = this.student.name;
         this.phone.value = this.student.phone;
@@ -106,7 +106,7 @@ export default {
 
         },
         Cancel(){
-            this.$emit('clicked')
+            this.$emit('cancel')
         },
         isPhone: function(value) {
             return phoneNumberRegExp.test(value);
